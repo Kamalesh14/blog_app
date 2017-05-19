@@ -18,11 +18,6 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
-  def greet
-    @message = "Hello Mr. Kamalesh"
-    # render file: '/Users/kamaleshmaurya/Developer/blog_app/test.html'
-    render "show"
-  end
 
   # GET /articles/1/edit
   def edit
@@ -32,7 +27,7 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
-    # @article = Article.new(article_params)
+    @article = Article.new(article_params)
 
     respond_to do |format|
       if @article.save
